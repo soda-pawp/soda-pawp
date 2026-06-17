@@ -68,7 +68,7 @@
   const drive = window.SODA_IMAGES || [];
   const driveUrl = window.driveUrl;
   let html='';
-  const N=Math.max(12,drive.length);
+  const N=drive.length||12;
   for(let i=0;i<N;i++){const c=palettes[i%palettes.length];const m=motifs[i%motifs.length];
     const id=drive[i];
     const img=id?`<img src="${driveUrl(id)}" data-fid="${id}" referrerpolicy="no-referrer" onerror="driveErr(this)" alt="">`:`<img src="images/art-${i+1}.jpg" referrerpolicy="no-referrer" onerror="this.remove()" alt="">`;

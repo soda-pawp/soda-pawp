@@ -96,7 +96,7 @@
   const tags=['sticker','print','charm','keychain','sticker sheet','button'];
   const drive=window.SODA_IMAGES||[];const driveUrl=window.driveUrl;
   let html='';
-  const N=Math.max(6,drive.length);
+  const N=drive.length||6;
   for(let i=0;i<N;i++){const c=palettes[i%palettes.length];const m=motifs[i%motifs.length];
     const id=drive[i]||null;
     const img=id?`<img src="${driveUrl(id)}" data-fid="${id}" referrerpolicy="no-referrer" onerror="driveErr(this)" alt="">`:`<img src="images/product-${i+1}.jpg" referrerpolicy="no-referrer" onerror="this.remove()" alt="">`;
