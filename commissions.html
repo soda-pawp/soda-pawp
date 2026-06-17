@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Commissions — Soda Pawp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bubbles">
+  <span style="left:10%;width:36px;height:36px;background:#ff5d8f;animation-duration:16s"></span>
+  <span style="left:44%;width:22px;height:22px;background:#ffac4f;animation-duration:12s;animation-delay:2s"></span>
+  <span style="left:76%;width:40px;height:40px;background:#9b6ad6;animation-duration:18s;animation-delay:1s"></span>
+</div>
+
+<header>
+  <div class="nav-in">
+    <a class="logo" href="index.html">
+      <img class="logomark" src="logo.png" alt="Soda Pawp" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="logo-fallback" style="display:none">Soda<b>Pawp</b></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="commissions.html" class="active">Commissions</a>
+      <a href="shop.html">Shop</a>
+      <a href="pay.html">Pay here</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head wrap">
+    <h1>Commissions ✦</h1>
+    <p>Character art — flat or fully rendered. <span class="pill closed" id="commStatus">Status: Closed</span></p>
+  </section>
+
+  <section class="section wrap">
+    <div class="prices">
+      <div class="price">
+        <div class="ptype">Bust</div>
+        <div class="row"><span>Regular</span><b>$15</b></div>
+        <div class="row"><span>Rendered</span><b>$20</b></div>
+      </div>
+      <div class="price">
+        <div class="ptype">Halfbody</div>
+        <div class="row"><span>Regular</span><b>$20</b></div>
+        <div class="row"><span>Rendered</span><b>$28</b></div>
+      </div>
+      <div class="price">
+        <div class="ptype">Fullbody</div>
+        <div class="row"><span>Regular</span><b>$30</b></div>
+        <div class="row"><span>Rendered</span><b>$40</b></div>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:30px;">
+      <h2 style="font-size:24px;">Add-ons</h2>
+    </div>
+    <div class="cards" style="margin-top:14px;">
+      <div class="card"><h3>Simple background</h3><p>+ $10</p></div>
+      <div class="card"><h3>Prop</h3><p>+ $5–$10</p></div>
+      <div class="card"><h3>Custom?</h3><p>Ask me — I'm flexible on bigger ideas!</p></div>
+    </div>
+
+    <div class="row-btns" style="margin-top:30px;">
+      <a class="btn btn-cherry" href="tos.html">Read the TOS</a>
+      <a class="btn btn-grape" href="https://forms.gle/xNKrtmxmKZ3cr82T6" target="_blank" rel="noopener">Join the waitlist</a>
+    </div>
+    <div class="note" style="max-width:560px;margin:26px auto 0;" id="commNote">Commissions are currently <b>closed</b> — hop on the waitlist and you'll be first to know when they reopen! ♡</div>
+  </section>
+</main>
+
+<footer>
+  <a class="logo" href="index.html"><img class="logomark" src="logo.png" alt="Soda Pawp" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="logo-fallback" style="display:none">Soda<b>Pawp</b></span></a>
+  <div>made with ♡ by Kailey · SoCal artist</div>
+</footer>
+
+<script src="config.js"></script>
+<script>
+  (function(){
+    var open = window.COMMISSIONS_OPEN;
+    var pill = document.getElementById('commStatus');
+    var note = document.getElementById('commNote');
+    if(open){
+      pill.textContent = 'Status: Open!';
+      pill.className = 'pill open';
+      note.innerHTML = 'Commissions are <b>open</b> right now — fill out the form to grab a slot! ♡';
+    } else {
+      pill.textContent = 'Status: Closed';
+      pill.className = 'pill closed';
+      note.innerHTML = 'Commissions are currently <b>closed</b> — hop on the waitlist and you\'ll be first to know when they reopen! ♡';
+    }
+  })();
+</script>
+
+</body>
+</html>
