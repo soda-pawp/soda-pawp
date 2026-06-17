@@ -2,7 +2,7 @@
 // Paste each Google Drive FILE ID here (right-click file → Share → copy link → the bit between /d/ and /view).
 // These photos auto-fill the Home, Gallery, and Shop grids.
 window.SODA_IMAGES = [
-  '1_Yi3NW83zgLQcGPYFHrO5kv4ut8SPDHz',
+  '1Fw8272D9Rp7u7XoklP0Gc6YzE3IEZ8U9',
   '1VeCYGpZDs0bQPS1GvP_DWx7tiQoSWkLu',
   '1pGddV_qBCjqDl3qPdSse4vfP38cu7BHS',
   '1P8AXI6a-_jxTgZbq_fQvjYzX1S8CGq7Y',
