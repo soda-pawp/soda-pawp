@@ -142,6 +142,15 @@ main{position:relative;z-index:1;}
 .linkrow .dot{width:17px;height:17px;flex:none;
   clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
 
+/* purchase modal */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(70,48,60,.45);backdrop-filter:blur(3px);padding:20px;}
+.modal.show{display:flex;}
+.modal-box{background:var(--paper);border:2px solid var(--line);border-radius:26px;padding:34px 30px;max-width:360px;width:100%;text-align:center;box-shadow:var(--shadow);animation:pop .25s ease;}
+@keyframes pop{from{transform:scale(.9);opacity:0;}to{transform:none;opacity:1;}}
+.modal-box h3{font-size:25px;margin-bottom:8px;}
+.modal-box p{color:var(--soft);margin-bottom:22px;}
+.modal-box .row-btns{margin-top:0;}
+
 /* TOS page */
 .tos{max-width:760px;margin:0 auto;}
 .tos-card{background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:26px 28px;margin-bottom:18px;box-shadow:var(--shadow);}

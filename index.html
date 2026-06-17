@@ -143,8 +143,9 @@
   const drive=window.SODA_IMAGES||[];const driveUrl=window.driveUrl;
   let html='';
   for(let i=0;i<6;i++){const c=palettes[i%palettes.length];const m=motifs[i%motifs.length];
-    const src=drive[i]?driveUrl(drive[i]):`images/art-${i+1}.jpg`;
-    html+=`<a class="art" href="gallery.html"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${c[1]}"/>${m(c)}</svg><img src="${src}" alt="" referrerpolicy="no-referrer" onerror="this.remove()"><span class="tag">${tags[i%tags.length]}</span></a>`;}
+    const id=drive[i];
+    const img=id?`<img src="${driveUrl(id)}" data-fid="${id}" referrerpolicy="no-referrer" onerror="driveErr(this)" alt="">`:`<img src="images/art-${i+1}.jpg" referrerpolicy="no-referrer" onerror="this.remove()" alt="">`;
+    html+=`<a class="art" href="gallery.html"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${c[1]}"/>${m(c)}</svg>${img}<span class="tag">${tags[i%tags.length]}</span></a>`;}
   document.getElementById('artGrid').innerHTML=html;
 </script>
 </body>

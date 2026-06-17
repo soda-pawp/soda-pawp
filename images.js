@@ -16,4 +16,11 @@ window.SODA_IMAGES = [
   '12iWD4xhK43XJKOXsHAkf8pguJyikH9F5',
   '1jqQY62Oi_NJ4t28jOxPSVvRiuWqMLSx1'
 ];
-window.driveUrl = id => `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
+// Primary = Google's image CDN (most reliable for embedding); falls back to the thumbnail endpoint, then the illustration.
+window.driveUrl = id => `https://lh3.googleusercontent.com/d/${id}=w700`;
+window.driveAlt = id => `https://drive.google.com/thumbnail?id=${id}&sz=w700`;
+window.driveErr = function(img){
+  var id = img.getAttribute('data-fid');
+  if(id && !img.dataset.tried){ img.dataset.tried='1'; img.src = window.driveAlt(id); }
+  else { img.remove(); }
+};

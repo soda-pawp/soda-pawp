@@ -68,6 +68,17 @@
   </section>
 </main>
 
+<div class="modal" id="buyModal" onclick="if(event.target===this)closeBuy()">
+  <div class="modal-box">
+    <h3>Want to purchase? ♡</h3>
+    <p>Yay! Head to the pay page to fill out the order form &amp; pay.</p>
+    <div class="row-btns">
+      <a class="btn btn-cherry" href="pay.html">Pay here →</a>
+      <button class="btn btn-ghost" type="button" onclick="closeBuy()">Keep looking</button>
+    </div>
+  </div>
+</div>
+
 <footer>
   <a class="logo" href="index.html"><img class="logomark" src="logo.png" alt="Soda Pawp" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="logo-fallback" style="display:none">Soda<b>Pawp</b></span></a>
   <div>made with ♡ by Kailey · SoCal artist</div>
@@ -87,9 +98,12 @@
   let html='';
   for(let i=0;i<6;i++){const c=palettes[i%palettes.length];const m=motifs[i%motifs.length];
     const id=drive.length?drive[(i+6)%drive.length]:null;
-    const src=id?driveUrl(id):`images/product-${i+1}.jpg`;
-    html+=`<a class="art" href="https://docs.google.com/document/d/1SBZsHbrwWIygRHL1YIG7nrLLphSn-xzdlB2cOWogMe4/edit" target="_blank" rel="noopener" title="Click to order this!"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${c[1]}"/>${m(c)}</svg><img src="${src}" alt="" referrerpolicy="no-referrer" onerror="this.remove()"><span class="tag">${tags[i%tags.length]}</span></a>`;}
+    const img=id?`<img src="${driveUrl(id)}" data-fid="${id}" referrerpolicy="no-referrer" onerror="driveErr(this)" alt="">`:`<img src="images/product-${i+1}.jpg" referrerpolicy="no-referrer" onerror="this.remove()" alt="">`;
+    html+=`<a class="art" href="#" onclick="askBuy(event)" title="Want to purchase?"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${c[1]}"/>${m(c)}</svg>${img}<span class="tag">${tags[i%tags.length]}</span></a>`;}
   document.getElementById('shopGrid').innerHTML=html;
+
+  function askBuy(e){ e.preventDefault(); document.getElementById('buyModal').classList.add('show'); }
+  function closeBuy(){ document.getElementById('buyModal').classList.remove('show'); }
 </script>
 </body>
 </html>
