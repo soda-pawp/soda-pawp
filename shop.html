@@ -96,8 +96,9 @@
   const tags=['sticker','print','charm','keychain','sticker sheet','button'];
   const drive=window.SODA_IMAGES||[];const driveUrl=window.driveUrl;
   let html='';
-  for(let i=0;i<6;i++){const c=palettes[i%palettes.length];const m=motifs[i%motifs.length];
-    const id=drive.length?drive[(i+6)%drive.length]:null;
+  const N=Math.max(6,drive.length);
+  for(let i=0;i<N;i++){const c=palettes[i%palettes.length];const m=motifs[i%motifs.length];
+    const id=drive[i]||null;
     const img=id?`<img src="${driveUrl(id)}" data-fid="${id}" referrerpolicy="no-referrer" onerror="driveErr(this)" alt="">`:`<img src="images/product-${i+1}.jpg" referrerpolicy="no-referrer" onerror="this.remove()" alt="">`;
     html+=`<a class="art" href="#" onclick="askBuy(event)" title="Want to purchase?"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${c[1]}"/>${m(c)}</svg>${img}<span class="tag">${tags[i%tags.length]}</span></a>`;}
   document.getElementById('shopGrid').innerHTML=html;
