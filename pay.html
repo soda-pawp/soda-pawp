@@ -26,8 +26,8 @@
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
-      <a href="commissions.html">Commissions</a>
       <a href="shop.html">Shop</a>
+      <a href="commissions.html">Commissions</a>
       <a href="pay.html" class="active">Pay here</a>
     </nav>
   </div>
@@ -41,7 +41,7 @@
 
   <section class="section wrap">
     <div class="center" style="margin-bottom:14px;">
-      <h2 style="font-size:24px;">1. Fill the order form</h2>
+      <h2 style="font-size:24px;">1. Read the order form</h2>
       <p style="color:var(--soft)">Tell me what you'd like &amp; I'll confirm the price!</p>
     </div>
     <div class="row-btns">
@@ -53,15 +53,19 @@
   <section class="section wrap">
     <div class="center" style="margin-bottom:14px;">
       <h2 style="font-size:24px;">2. Send payment</h2>
-      <p style="color:var(--soft)">Pick whatever's easiest for you ♡</p>
+      <p style="color:var(--soft)">Zelle is preferred — tysm! ♡</p>
     </div>
-    <div class="linklist">
+    <div class="linklist" style="grid-template-columns:1fr;max-width:320px;">
+      <a class="linkrow" href="zelle.html"><span class="dot" style="background:#7b3fd4"></span>Zelle</a>
+    </div>
+    <div class="row-btns" style="margin-top:14px;">
+      <button class="btn btn-ghost" type="button" id="moreBtn" onclick="toggleMore()">More payment options ↓</button>
+    </div>
+    <div class="linklist" id="morePay" style="display:none;margin-top:16px;grid-template-columns:1fr;max-width:320px;">
       <a class="linkrow" href="https://venmo.com/u/kaileychapin" target="_blank" rel="noopener"><span class="dot" style="background:#3d95ce"></span>Venmo</a>
       <a class="linkrow" href="https://cash.app/$KaileyChapin" target="_blank" rel="noopener"><span class="dot" style="background:#8fd16a"></span>Cash App</a>
-      <a class="linkrow" href="https://www.paypal.com/paypalme/kaileychapin" target="_blank" rel="noopener"><span class="dot" style="background:#54c4e8"></span>PayPal</a>
       <a class="linkrow" href="https://www.mercari.com/u/soda_pawp?sv=0" target="_blank" rel="noopener"><span class="dot" style="background:#ff5d8f"></span>Mercari</a>
     </div>
-    <div class="note" style="max-width:520px;margin:20px auto 0;">Zelle available too — please ask to see the QR code in person! :)</div>
     <div class="row-btns" style="margin-top:26px;">
       <a class="btn btn-ghost" href="shop.html">← Back to shop</a>
     </div>
@@ -72,6 +76,15 @@
   <a class="logo" href="index.html"><img class="logomark" src="logo1.png" alt="Soda Pawp" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="logo-fallback" style="display:none">Soda<b>Pawp</b></span></a>
   <div>made with ♡ by Kailey · SoCal artist</div>
 </footer>
+
+<script>
+  function toggleMore(){
+    var m=document.getElementById('morePay'), b=document.getElementById('moreBtn');
+    var open = (m.style.display==='none' || !m.style.display);
+    m.style.display = open ? 'grid' : 'none';
+    b.textContent = open ? 'Hide payment options ↑' : 'More payment options ↓';
+  }
+</script>
 
 </body>
 </html>

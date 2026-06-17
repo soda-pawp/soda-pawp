@@ -3,9 +3,7 @@
 // These photos auto-fill the Home, Gallery, and Shop grids.
 window.SODA_IMAGES = [
   '1Fw8272D9Rp7u7XoklP0Gc6YzE3IEZ8U9',
-  '1VeCYGpZDs0bQPS1GvP_DWx7tiQoSWkLu',
   '1pGddV_qBCjqDl3qPdSse4vfP38cu7BHS',
-  '1P8AXI6a-_jxTgZbq_fQvjYzX1S8CGq7Y',
   '1tnQ5qiHyZyoy2g3p7zmuGhawKl7HOCjb',
   '1Nf5V_Lw273c8Q76nydtBHLFZIeqgKdS1',
   '1lGgT4pDJdQ1IXsdc43hLW14_NZ80tzLH',
